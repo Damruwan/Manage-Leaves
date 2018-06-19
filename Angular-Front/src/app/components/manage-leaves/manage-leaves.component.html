@@ -1,0 +1,31 @@
+<h2>All Requested Leaves</h2>
+<br><br>
+	<div *ngFor = "let request of requests">
+		<div class = "col-md-1">
+			{{request.name}}
+		</div>
+		<div class = "col-md-1">
+			{{request.post}}
+		</div>
+		<div class = "col-md-2">
+			{{request.date}}
+		</div>
+		<div class = "col-md-2">
+			{{request.reason}}
+		</div>
+		<div class = "col-md-3">
+			{{request.describe}}
+		</div>
+		<div class = "col-md-1">
+			<input type="button" (click) = "viewUser(request.email)" value= "History" class ="btn btn-success">
+			<br><br>
+		</div>
+		<div class = "col-md-1">
+			<input type="button" (click) = "acceptRequest(request)" value= "Accept" class ="btn btn-success">
+			<br><br>
+		</div>
+		<div class = "col-md-1">
+			<input type="button" (click) = "deleteRequest(request)" value= "Cancel" class ="btn btn-danger">
+			<br><br>
+		</div>
+	</div>
