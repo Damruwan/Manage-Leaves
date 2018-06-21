@@ -1,3 +1,19 @@
-<p>
-  leave-history works!
-</p>
+<div class = "container">
+	<h2>Leaves History</h2>
+	<br><br>
+	<div *ngFor = "let hry of history">
+		<div class = "col-md-3">
+			{{hry.date}}
+		</div>
+		<div class = "col-md-2">
+			{{hry.reason}}
+		</div>
+		<div class = "col-md-5">
+			{{hry.describe}}
+		</div>
+		<div class = "col-md-2">
+			{{hry.state}}
+		</div>
+		<br><br>
+	</div>
+</div>
