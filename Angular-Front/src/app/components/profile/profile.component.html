@@ -1,3 +1,25 @@
-<div *ngIf="user">
-	{{user.full_name}}
+<div class = 'container'>
+	<div *ngIf="user">
+		<div class = "row">
+			NAME : {{user.full_name}}
+		</div>
+		<br>
+		<div class = "row">
+			POST : {{user.post}}
+		</div>
+		<br>
+		<div class = "row">
+			CONTACT NO : {{user.phone}}
+		</div>
+		<br>
+		<div class = "row">
+			USERNAME : {{user.username}}
+		</div>
+		<br>
+		<div class = "row">
+			EMAIL : {{user.email}}
+		</div>
+		<br>
+    </div>
 </div>
+

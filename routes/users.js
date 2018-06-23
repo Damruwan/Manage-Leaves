@@ -54,6 +54,7 @@ router.post("/login",function(req, res) {
 	            		{
 	                         state:true,
 	                         token:"Bearer " + token,
+	                         id:user._id,
 	                         level:user.state,
 	                         name:user.full_name,
 	                         email:user.email,
@@ -88,13 +89,53 @@ router.get('/profile', verify.verifytoken, function(req, res) {
 );
 
 router.get('/manageUsers', function(req, res) {
+        const query = {post:'staff'};
+        User.find(query,function(err, user){
+		   res.json(user);
+	})
+	      
+});
 
+router.get('/manageAdmin', function(req, res) {
         User.find(function(err, user){
 		   res.json(user);
 	})
 	      
 });
 
+router.get('/getUser/:id', function(req, res) {
+        User.findOne({_id: req.params.id}, function(err, user){
+		    if(err)
+			{
+				res.json(err);
+			}
+			else{
+				res.json(user);
+			}	
+	});
+	      
+});
+
+router.put('/updateUser/:id', function(req, res) {
+ 
+        User.findByIdAndUpdate(req.params.id,
+        {
+          $set: {full_name: req.body.full_name, post:req.body.post, phone:req.body.phone, username:req.body.username, email:req.body.email, password:req.body.password, state:req.body.state}
+        },
+        {
+          new: true
+        },
+        function(err, updatedUser){
+           if(err)
+		   {
+			  res.json(err);
+		   }
+		   else{
+			  res.json(updatedUser);
+		   }	
+
+       });	      
+});
 
 
 router.delete('/manageUsers/:id',(req, res, next)=>{

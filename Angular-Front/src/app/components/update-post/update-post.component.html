@@ -1,0 +1,24 @@
+<div class = "container">
+	<h2 class = "page-header"> Update Posts</h2>
+	<form (submit) = "updateData()">
+		<div class = "form-group">
+			<label>About</label>
+			<input type="text" [(ngModel)] = "about" name ="about" class = "form-control" required>
+		</div>
+		<div class = "form-group">
+			<label>Date</label>
+			<input type="text" [(ngModel)] = "date" name ="date" class = "form-control" required>
+		</div>
+		<div class = "form-group">
+			<label>Content</label><br>
+			<textarea [(ngModel)]='content' name ="content" rows="6" cols="100"></textarea>
+		</div>
+		<br>
+        <div class = "form-group">
+			<input type="submit" class ="btn btn-success" value = "Update">
+        </div>
+        <div class = "form-group">
+			<input type="button" (click) = "redirectBack()" value= "back" class ="btn btn-warning">
+        </div>
+	</form>
+</div>

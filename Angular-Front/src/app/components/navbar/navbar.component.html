@@ -8,13 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">UCSC</a>
+      <a class="navbar-brand" href="http://ucsc.cmb.ac.lk/">UCSC</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a></li>
+        <li><a [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="#">About</a></li>
       </ul>
       
@@ -28,11 +28,11 @@
             <li *ngIf="authService.isStaff() || authService.isAdmin() || authService.isHead()"><a [routerLink]="['/profile']">Profile</a></li>
             <li *ngIf="authService.isStaff() || authService.isAdmin()"><a [routerLink]="['/requestLeaves']">Request Leaves</a></li>
             <li *ngIf="authService.isStaff() || authService.isAdmin()"><a [routerLink]="['/leaveHistory']">History of Leaves</a></li>
-            <li *ngIf="authService.isHead() || authService.isAdmin()"><a [routerLink]="['/manageUsers']">Manage Users</a></li>
-            <li *ngIf="authService.isHead() || authService.isAdmin()"><a [routerLink]="['/addPost']">Add Post</a></li>
+            <li *ngIf="authService.isAdmin()"><a [routerLink]="['/manageUsers']">Manage Staff</a></li>
+            <li *ngIf="authService.isAdmin() || authService.isHead()"><a [routerLink]="['/addPost']">Add Post</a></li>
             <li *ngIf="authService.isAdmin()"><a [routerLink]="['/reportGenaration']">Report Genaration</a></li>
+            <li *ngIf="authService.isHead()"><a [routerLink]="['/manageAdmin']">Manage Users</a></li>
             <li *ngIf="authService.isHead()"><a [routerLink]="['/manageLeaves']">Manage Leaves</a></li>
-            <li *ngIf="authService.isHead()"><a [routerLink]="['/grantAccess']">Grant Access</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" (click)="logoutUser()">Logout</a></li>
           </ul>

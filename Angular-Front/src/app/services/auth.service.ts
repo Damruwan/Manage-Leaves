@@ -13,6 +13,7 @@ export class AuthService {
 
   user:any;
   authtoken:any;
+  authid:any;
   authname:any;
   authlevel:any;
   authemail:any;
@@ -56,6 +57,23 @@ export class AuthService {
   }
 
 
+  getUserToUpdate(id){
+
+    return this.http.get('http://localhost:3000/user/getUser/'+id).pipe(map(res => res.json()));
+  }
+
+  updateUser(id,user){
+
+    return this.http.put('http://localhost:3000/user/updateUser/'+id,user).pipe(map(res => res.json()));
+  }
+
+
+  getAllUsers(){
+
+    return this.http.get('http://localhost:3000/user/manageAdmin').pipe(map(res => res.json()));
+  }
+
+
   deleteUser(id){
 
     return this.http.delete('http://localhost:3000/user/manageUsers/'+id)
@@ -66,6 +84,12 @@ export class AuthService {
   fetchToken(){
      const token = localStorage.getItem("tokenid");
      this.authtoken = token;
+
+  }
+
+  fetchId(){
+     const id = localStorage.getItem("id");
+     this.authid = id;
 
   }
 
@@ -92,9 +116,10 @@ export class AuthService {
 
 
 
-  storeData(token,name,level,email,post){
+  storeData(token,id,name,level,email,post){
 
      localStorage.setItem("tokenid",token);
+     localStorage.setItem("id",id);
      localStorage.setItem("name",name);
      localStorage.setItem("level",level);
      localStorage.setItem("email",email);
@@ -122,6 +147,11 @@ export class AuthService {
   getAuthName(){
      this.fetchName();
      return this.authname;
+  }
+
+  getAuthId(){
+     this.fetchId();
+     return this.authid;
   }
 
   getAuthEmail(){

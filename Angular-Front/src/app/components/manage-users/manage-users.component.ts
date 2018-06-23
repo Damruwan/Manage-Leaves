@@ -15,12 +15,10 @@ export class ManageUsersComponent implements OnInit {
 users: Users[];
   
   full_name:String;
-  post:String;
   phone:String;
   username:String;
   email:String;
   password:String;
-  state:String;
 
   constructor(
 
@@ -42,12 +40,12 @@ users: Users[];
     
     const user = {
        full_name:this.full_name,
-       post:this.post,
+       post:'staff',
        phone:this.phone,
        username:this.username,
        email:this.email,
        password:this.password,
-       state:this.state
+       state:'2'
     };
 
     this.authService.registerUser(user).subscribe(user=>{

@@ -9,11 +9,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
-
-import { AuthService } from './services/auth.service';
-
-import { FlashMessagesService } from 'angular2-flash-messages';
 import { ManageUsersComponent } from './components/manage-users/manage-users.component';
 import { ManageLeavesComponent } from './components/manage-leaves/manage-leaves.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,8 +16,18 @@ import { RequestLeavesComponent } from './components/request-leaves/request-leav
 import { LeaveHistoryComponent } from './components/leave-history/leave-history.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
 import { ReportGenarationComponent } from './components/report-genaration/report-genaration.component';
-import { GrantAccessComponent } from './components/grant-access/grant-access.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
+import { ManageAdminComponent } from './components/manage-admin/manage-admin.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
+import { UpdatePostComponent } from './components/update-post/update-post.component';
+
+
+
+import { AuthService } from './services/auth.service';
+import { PostService } from './services/post.service';
+import { RequestService } from './services/request.service';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 
 
 
@@ -38,8 +43,10 @@ const applicationRoutes:Routes = [
     {path:'addPost',component:AddPostComponent},
     {path:'reportGenaration',component:ReportGenarationComponent},
     {path:'manageLeaves',component:ManageLeavesComponent},
-    {path:'grantAccess',component:GrantAccessComponent},
-    {path:'viewUser',component:ViewUserComponent}
+    {path:'viewUser',component:ViewUserComponent},
+    {path:'manageAdmin',component:ManageAdminComponent},
+    {path:'updateUser',component:UpdateUserComponent},
+    {path:'updatePost',component:UpdatePostComponent}
    
 ];
 
@@ -56,8 +63,10 @@ const applicationRoutes:Routes = [
     LeaveHistoryComponent,
     AddPostComponent,
     ReportGenarationComponent,
-    GrantAccessComponent,
     ViewUserComponent,
+    ManageAdminComponent,
+    UpdateUserComponent,
+    UpdatePostComponent,
     
  
   ],
@@ -69,7 +78,7 @@ const applicationRoutes:Routes = [
     FlashMessagesModule
     
   ],
-  providers: [AuthService, FlashMessagesService],
+  providers: [AuthService, RequestService, PostService, FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,38 @@
-<p>
-  home works!
-</p>
-
- 
+<div class = "container">
+	<div *ngFor = "let post of posts">
+	  <div class="row" style="background-color: #cce0ff;height: 400px;">
+	   <div class = "row">
+	   	  <div class = "col-md-12">
+			<h1>{{post.about}}</h1>
+		  </div>  
+	   </div>	
+       <div class = "row">
+		  <div class = "col-md-1">
+			<h3>Post</h3>
+		  </div>
+		  <div class = "col-md-1">
+			<h3>by</h3>
+		  </div>
+		  <div class = "col-md-1">
+			<h3>{{post.name}}</h3>
+		  </div>
+		  <div class = "col-md-1">
+			<h3>({{post.post}})</h3>
+		  </div>
+		  <div class = "col-md-1">
+			<h3>On</h3>
+		  </div>
+		  <div class = "col-md-4">
+			<h3>{{post.date}}</h3>
+		  </div>	
+	   </div>
+	   <br><br>
+	   <div class = "row">
+	   	  <div class = "col-md-12">
+	   	    <p>{{post.content}}</p>
+	   	  </div>  
+	   </div>
+	  </div>
+	  <br><br>
+   </div>	
+</div>

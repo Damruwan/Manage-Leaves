@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         this.authService.loginUser(user).subscribe(res=>{
 
            if(res.state) {
-             this.authService.storeData(res.token, res.name, res.level,res.email,res.post);
+             this.authService.storeData(res.token, res.id, res.name, res.level,res.email,res.post);
              this.flashMessage.show("You're Loggedin" , { cssClass: 'alert-success', times:3000});
              this.router.navigate(['/profile']);
              

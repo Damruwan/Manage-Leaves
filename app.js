@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 const config = require('./config/database');
 const user = require('./routes/users');
 const request = require('./routes/request');
+const post = require('./routes/post');
 
 
 const connection = mongoose.connect(config.database);
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname,"public")));
 
 app.use('/user',user);
 app.use('/request',request);
+app.use('/post',post);
 
 app.get("/",function(req, res) {
 	res.send("hello");

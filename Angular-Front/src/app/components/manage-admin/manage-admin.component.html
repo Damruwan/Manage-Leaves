@@ -1,0 +1,53 @@
+<div class = "container">
+	<h2 class = "page-header"> Register Users</h2>
+	<form (submit) = "registerData()">
+		<div class = "form-group">
+			<label>Name</label>
+			<input type="text" [(ngModel)] = "full_name" name ="full_name" class = "form-control">
+		</div>
+		<div class = "form-group">
+			<label>Phone No.</label>
+			<input type="text" [(ngModel)] = "phone" name ="phone" class = "form-control" required>
+		</div>
+		<div class = "form-group">
+			<label>Username</label>
+			<input type="text" [(ngModel)] = "username" name ="username" class = "form-control" required>
+		</div>
+		<div class = "form-group">
+			<label>Email</label>
+			<input type="text" [(ngModel)] = "email" name ="email" class = "form-control" required>
+		</div>
+		<div class = "form-group">
+			<label>Password</label>
+			<input type="text" [(ngModel)] = "password" name ="password" class = "form-control" required>
+		</div>
+		<div class = "form-group">
+			<label>Level</label>
+			<input type="text" [(ngModel)] = "state" name ="state" class = "form-control" required>
+		</div>
+		
+		<input type="submit" class ="btn btn-success" value = "Submit">
+	</form>
+</div>
+<hr>
+<div class = "container">
+	<div *ngFor = "let user of users">
+		<div class = "col-md-4">
+			{{user.full_name}}
+		</div>
+		<div class = "col-md-3">
+			{{user.post}}
+		</div>
+		<div class = "col-md-3">
+			{{user.phone}}
+		</div>
+		<div class = "col-md-1">
+			<input type="button" (click) = "deleteUser(user._id)" value= "Delete" class ="btn btn-danger">
+			<br><br>
+		</div>
+		<div class = "col-md-1">
+			<input type="button" (click) = "updateUser(user._id)" value= "Edit" class ="btn btn-warning">
+			<br><br>
+		</div>
+	</div>
+</div>
