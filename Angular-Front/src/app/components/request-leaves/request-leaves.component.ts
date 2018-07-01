@@ -18,7 +18,7 @@ export class RequestLeavesComponent implements OnInit {
   name = this.authService.getAuthName();
   post = this.authService.getAuthPost();
 
-  date:Date;
+  date:String;
   reason:String;
   describe:String;
 

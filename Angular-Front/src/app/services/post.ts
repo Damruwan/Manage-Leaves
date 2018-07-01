@@ -2,7 +2,7 @@ export class Post{
     _id: string;
     name:string;
     post:string;
-    date: Date;
+    date: string;
     about: string;
     content: string;
 	

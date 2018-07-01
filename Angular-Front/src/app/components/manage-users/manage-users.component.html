@@ -27,19 +27,20 @@
 </div>
 <hr>
 <div class = "container">
-	<div *ngFor = "let user of users">
-		<div class = "col-md-3">
-			{{user.full_name}}
-		</div>
-		<div class = "col-md-3">
-			{{user.post}}
-		</div>
-		<div class = "col-md-3">
-			{{user.phone}}
-		</div>
-		<div class = "col-md-3">
-			<input type="button" (click) = "deleteUser(user._id)" value= "Delete" class ="btn btn-danger">
-			<br><br>
-		</div>
-	</div>
+	<table>
+			<tr>
+			   <th>Name</th>
+			   <th>Post</th>
+			   <th>Contact</th>
+			   <th>Delete</th>
+			</tr>
+			  
+			<tr *ngFor = "let user of users">
+			   <td>{{user.full_name}}</td>
+			   <td>{{user.post}}</td>
+			   <td>{{user.phone}}</td>
+			   <th><input type="button" (click) = "deleteUser(user._id)" value= "Delete" class ="btn btn-danger"></th>
+			</tr>
+			
+	</table>
 </div>

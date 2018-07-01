@@ -1,0 +1,12 @@
+<div class = "container">
+	<h2 class = "page-header"> Select Dates</h2>
+	<form (submit) = "blockDate()">
+		<div class = "form-group">
+			<label>Date</label>
+			<input type="date"  [(ngModel)] = "date" name ="date" class = "form-control" required>
+		</div>
+		
+		<input type="submit" class ="btn btn-success" value = "Submit">
+	</form>
+</div>
+<hr>

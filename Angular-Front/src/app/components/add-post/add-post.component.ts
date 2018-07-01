@@ -18,7 +18,7 @@ export class AddPostComponent implements OnInit {
   post = this.authService.getAuthPost();
 
   about:String;
-  date:Date;
+  date:String;
   content:String;
 
   constructor(

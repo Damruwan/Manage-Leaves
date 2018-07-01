@@ -4,7 +4,7 @@
 		
 		<div class = "form-group">
 			<label>Date</label>
-			<input type="date" [(ngModel)] = "date" name ="date" class = "form-control" required>
+			<input type="text" bsDaterangepicker [(ngModel)] = "date" name ="date" class = "form-control" required>
 		</div>
 		<div class = "form-group">
 			<label>Reason</label>
@@ -19,19 +19,20 @@
 </div>
 <hr>
 <div class = "container">
-	<div *ngFor = "let request of requests">
-		<div class = "col-md-3">
-			{{request.date}}
-		</div>
-		<div class = "col-md-3">
-			{{request.reason}}
-		</div>
-		<div class = "col-md-3">
-			{{request.describe}}
-		</div>
-		<div class = "col-md-3">
-			<input type="button" (click) = "deleteRequest(request._id)" value= "Delete" class ="btn btn-danger">
-			<br><br>
-		</div>
-	</div>
+	<table>
+			<tr>
+			   <th>Date</th>
+			   <th>Reason</th>
+			   <th>Describe</th>
+			   <th>Delete</th>
+			</tr>
+			  
+			<tr *ngFor = "let request of requests">
+			   <td>{{request.date}}</td>
+			   <td>{{request.reason}}</td>
+			   <td>{{request.describe}}</td>
+			   <th><input type="button" (click) = "deleteRequest(request._id)" value= "Delete" class ="btn btn-danger"></th>
+			</tr>
+			
+	</table>
 </div>

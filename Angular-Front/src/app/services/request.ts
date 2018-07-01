@@ -1,6 +1,6 @@
 export class Requests{
     _id: string;
-	date: Date;
+	date: string;
 	reason: string;
 	describe: string;
 }

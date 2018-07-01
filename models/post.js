@@ -7,7 +7,7 @@ const postSchema = new schema({
 	post:{type:String,required:true},
     email:{type:String,required:true},
     about:{type:String,required:true},
-	date:{type:Date,required:true},
+	date:{type:String,required:true},
 	content:{type:String,required:true}
 });
 

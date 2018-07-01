@@ -33,6 +33,7 @@
             <li *ngIf="authService.isAdmin()"><a [routerLink]="['/reportGenaration']">Report Genaration</a></li>
             <li *ngIf="authService.isHead()"><a [routerLink]="['/manageAdmin']">Manage Users</a></li>
             <li *ngIf="authService.isHead()"><a [routerLink]="['/manageLeaves']">Manage Leaves</a></li>
+            <li *ngIf="authService.isHead()"><a [routerLink]="['/controlDates']">Control Dates</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#" (click)="logoutUser()">Logout</a></li>
           </ul>

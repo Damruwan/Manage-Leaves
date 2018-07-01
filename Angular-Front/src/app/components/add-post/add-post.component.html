@@ -7,7 +7,7 @@
 		</div>
 		<div class = "form-group">
 			<label>Date</label>
-			<input type="date" [(ngModel)] = "date" name ="date" class = "form-control" required>
+			<input type="text" bsDatepicker [(ngModel)] = "date" name ="date" class = "form-control" required>
 		</div>
 		<div class = "form-group">
 			<label>Content</label><br>
@@ -19,26 +19,24 @@
 </div>
 <hr>
 <div class = "container">
-	<div *ngFor = "let post of posts">
-		<div class = "col-md-2">
-			{{post.name}}
-		</div>
-		<div class = "col-md-2">
-			{{post.post}}
-		</div>
-		<div class = "col-md-3">
-			{{post.date}}
-		</div>
-		<div class = "col-md-3">
-			{{post.about}}
-		</div>
-		<div class = "col-md-1">
-			<input type="button" (click) = "deletePost(post._id)" value= "Delete" class ="btn btn-danger">
-			<br><br>
-		</div>
-		<div class = "col-md-1">
-			<input type="button" (click) = "updatePost(post._id)" value= "Edit" class ="btn btn-warning">
-			<br><br>
-		</div>
-	</div>
+	<table>
+			<tr>
+			   <th>Name</th>
+			   <th>Post</th>
+			   <th>Date</th>
+			   <th>About</th>
+			   <th>Delete</th>
+			   <th>Update</th>
+			</tr>
+			  
+			<tr *ngFor = "let post of posts">
+			   <td>{{post.name}}</td>
+			   <td>{{post.post}}</td>
+			   <td>{{post.date}}</td>
+			   <th>{{post.about}}</th>
+			   <th><input type="button" (click) = "deletePost(post._id)" value= "Delete" class ="btn btn-danger"></th>
+			   <th><input type="button" (click) = "updatePost(post._id)" value= "Edit" class ="btn btn-warning"></th>
+			</tr>
+			
+	</table>
 </div>

@@ -1109,7 +1109,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  report-genaration works!\n</p>\n"
+module.exports = "<div class = \"container\">\n\t<div *ngFor = \"let user of users\">\n\t\t<div *ngIf = \"user.state != '0'\">\n\t\t\t<div class = \"col-md-3\">\n\t\t\t\t{{user.full_name}}\n\t\t\t</div>\n\t\t\t<div class = \"col-md-3\">\n\t\t\t\t{{user.post}}\n\t\t\t</div>\n\t\t\t<div class = \"col-md-3\">\n\t\t\t\t{{user.email}}\n\t\t\t</div>\n\t\t\t<div class = \"col-md-3\">\n\t\t\t\t<input type=\"button\" (click) = \"viewByMonth(user.email)\" value= \"By Monyh\" class =\"btn btn-success\">\n\t\t\t\t<br><br>\n\t\t\t</div>\n\t\t\t<div class = \"col-md-3\">\n\t\t\t\t<input type=\"button\" (click) = \"viewByYear(user.email)\" value= \"By Year\" class =\"btn btn-success\">\n\t\t\t\t<br><br>\n\t\t\t</div>\n\t\t\t<div class = \"col-md-3\">\n\t\t\t\t<input type=\"button\" (click) = \"viewAll(user.email)\" value= \"All\" class =\"btn btn-success\">\n\t\t\t\t<br><br>\n\t\t\t</div>\n\t\t</div>\t\n\t</div>\n</div>"
 
 /***/ }),
 
@@ -1124,6 +1124,10 @@ module.exports = "<p>\n  report-genaration works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReportGenarationComponent", function() { return ReportGenarationComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
+/* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1134,10 +1138,20 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var ReportGenarationComponent = /** @class */ (function () {
-    function ReportGenarationComponent() {
+    function ReportGenarationComponent(authService, flashMessage, router) {
+        this.authService = authService;
+        this.flashMessage = flashMessage;
+        this.router = router;
     }
     ReportGenarationComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.authService.getUser().subscribe(function (user) {
+            _this.users = user;
+        });
     };
     ReportGenarationComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1145,7 +1159,9 @@ var ReportGenarationComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./report-genaration.component.html */ "./src/app/components/report-genaration/report-genaration.component.html"),
             styles: [__webpack_require__(/*! ./report-genaration.component.css */ "./src/app/components/report-genaration/report-genaration.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"],
+            angular2_flash_messages__WEBPACK_IMPORTED_MODULE_1__["FlashMessagesService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], ReportGenarationComponent);
     return ReportGenarationComponent;
 }());
