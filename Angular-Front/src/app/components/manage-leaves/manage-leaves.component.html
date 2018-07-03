@@ -2,7 +2,7 @@
 <h2>All Requested Leaves</h2>
 <br><br>	
 	<table>
-			<tr>
+			<tr style="background:#4d4d4d; color:white;">
 			   <th>Name</th>
 			   <th>Post</th>
 			   <th>Date</th>
@@ -16,12 +16,12 @@
 			<tr *ngFor = "let request of requests">
 			   <td>{{request.name}}</td>
 			   <td>{{request.post}}</td>
-			   <td>{{request.date}}</td>
+			   <td>{{request.date.split(',')[0] | date}} - {{request.date.split(',')[1] | date}}</td>
 			   <th>{{request.reason}}</th>
 			   <th>{{request.describe}}</th>
-			   <th><input type="button" (click) = "viewUser(request.email)" value= "History" class ="btn btn-success"></th>
-			   <th><input type="button" (click) = "acceptRequest(request)" value= "Accept" class ="btn btn-warning"></th>
-			   <th><input type="button" (click) = "deleteRequest(request)" value= "Cancel" class ="btn btn-danger"></th>
+			   <th><input type="button" (click) = "viewUser(request.email)" value= "History" class ="btn btn-success" style="border: 1px solid #4d4d4d;"></th>
+			   <th><input type="button" (click) = "acceptRequest(request)" value= "Accept" class ="btn btn-warning" style="border: 1px solid #4d4d4d;"></th>
+			   <th><input type="button" (click) = "deleteRequest(request)" value= "Cancel" class ="btn btn-danger" style="border: 1px solid #4d4d4d;"></th>
 			</tr>
 			
 	</table>

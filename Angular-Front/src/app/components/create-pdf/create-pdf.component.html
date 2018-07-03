@@ -8,7 +8,7 @@
 		<br><br>
 		
 		<table>
-			<tr>
+			<tr style="background:#4d4d4d; color:white;">
 			   <th>Date</th>
 			   <th>Reason</th>
 			   <th>Describe</th>
@@ -16,20 +16,20 @@
 			</tr>
 			  
 			<tr *ngFor = "let hry of history">
-			   <td>{{hry.date}}</td>
+			   <td>{{hry.date.split(',')[0] | date}} - {{hry.date.split(',')[1] | date}}</td>
 			   <td>{{hry.reason}}</td>
 			   <td>{{hry.describe}}</td>
-			   <th>{{hry.state}}</th>
+			   <th style="color:red;">{{hry.state}}</th>
 			</tr>
 			
 		</table>
 		<br><br>
 
 		<div class = "col-md-3">
-				<input type="button" (click) = "redirectBack()" value= "back" class ="btn btn-success">
+				<input type="button" (click) = "redirectBack()" value= "back" class ="btn btn-success" style="border: 1px solid #4d4d4d;">
 	    </div>
 	    <div class = "col-md-3">
-				<input type="button" (click) = "downloadPFD()" value= "Download PDF" class ="btn btn-success">
+				<input type="button" (click) = "downloadPFD()" value= "Download PDF" class ="btn btn-success" style="border: 1px solid #4d4d4d;">
 	    </div>
 	</div>    
 </div>

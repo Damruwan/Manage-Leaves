@@ -12,7 +12,7 @@
 		</div>
 		<div class = "form-group">
 			<label>More Text</label><br>
-			<textarea [(ngModel)]='describe' name ="describe" rows="6" cols="100"></textarea>
+			<textarea [(ngModel)]='describe' name ="describe" rows="3" cols="10"></textarea>
 		</div>
 		<input type="submit" class ="btn btn-success" value = "Submit">
 	</form>
@@ -20,7 +20,7 @@
 <hr>
 <div class = "container">
 	<table>
-			<tr>
+			<tr style="background:#4d4d4d; color:white;">
 			   <th>Date</th>
 			   <th>Reason</th>
 			   <th>Describe</th>
@@ -28,10 +28,10 @@
 			</tr>
 			  
 			<tr *ngFor = "let request of requests">
-			   <td>{{request.date}}</td>
+			   <td>{{request.date.split(',')[0] | date}} - {{request.date.split(',')[1] | date}}</td>
 			   <td>{{request.reason}}</td>
 			   <td>{{request.describe}}</td>
-			   <th><input type="button" (click) = "deleteRequest(request._id)" value= "Delete" class ="btn btn-danger"></th>
+			   <th><input type="button" (click) = "deleteRequest(request._id)" value= "Delete" class ="btn btn-danger" style="border: 1px solid #4d4d4d;"></th>
 			</tr>
 			
 	</table>
