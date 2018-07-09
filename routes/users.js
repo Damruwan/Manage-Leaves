@@ -11,7 +11,6 @@ router.post("/manageUsers",function(req, res) {
 		full_name:req.body.full_name,
 		post:req.body.post,
 		phone:req.body.phone,
-		username:req.body.username,
 		email:req.body.email,
 		password:req.body.password,
 		state:req.body.state
@@ -19,7 +18,11 @@ router.post("/manageUsers",function(req, res) {
 
 	User.saveUser(newUser,function (err,user) {
 		if(err) {
-			res.json({state:false,msg:"data not inserted"});
+			if(err.errors.email.message){
+               res.json({state:false,msg:"The email is alrady exist"});
+			}else{
+			   res.json({state:false,msg:"data not inserted"});
+		    }
 		}
 		if(user) {
 			res.json({state:true,msg:"data inserted"});
@@ -42,33 +45,31 @@ router.post("/login",function(req, res) {
 
 		User.passwordCheck(password,user.password,function (err,match) {
 			if(err) throw err;
+            
+			if(!match) {
+				res.json({state:false,msg:"Password does not match"});
+			}	
 
-			if(match) {
-				
-				jwt.sign({user}, config.secret, {expiresIn:86400}, function(err,token) {
-	            	if (err) {
-	            		throw err;
-	            	}else{
+			jwt.sign({user}, config.secret, {expiresIn:86400}, function(err,token) {
+	            if (err) {
+	            	throw err;
+	            }else{
 	            		
-	            		res.json(
-	            		{
-	                         state:true,
-	                         token:"Bearer " + token,
-	                         id:user._id,
-	                         level:user.state,
-	                         name:user.full_name,
-	                         email:user.email,
-	                         post:user.post
+	            	res.json(
+	            	{
+	                    state:true,
+	                    token:"Bearer " + token,
+	                    id:user._id,
+	                    level:user.state,
+	                    name:user.full_name,
+	                    email:user.email,
+	                    post:user.post
 	                        
-	            		});
-	            	}
-                });
-                
-			}else{
-              res.json({state:false,msg:"Password does not match"});
-			}
+	                });
+	            }
+            });		
 
-		});
+	    });
 			
 
 	});

@@ -1,29 +1,61 @@
 <div class = "container">
-	<h2 class = "page-header"> Register Staff</h2>
-	<form (submit) = "registerData()">
+  <div class="jumbotron" style="width: 50%; background-color:#808080; border: 1px solid white;
+    border-radius: 10px;">	
+	<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Register Staff</h2>
+	<form #frm="ngForm" (ngSubmit) = "registerData(frm)">
 		<div class = "form-group">
 			<label>Name</label>
-			<input type="text" [(ngModel)] = "full_name" name ="full_name" class = "form-control">
+			<input type="text" name ="full_name" class = "form-control" ngModel #nameUser="ngModel" required pattern="[a-zA-Z][a-zA-Z]+[ ]+[a-zA-Z][a-zA-Z]+" placeholder="FirstName  LastName">
 		</div>
+			<div *ngIf="nameUser?.touched && nameUser.errors" class="alert alert-danger" style="width: 100%;">
+				<div *ngIf="nameUser.errors?.required">
+					Name is Required
+				</div>
+				<div *ngIf="nameUser.errors?.pattern">
+					Invalid Name
+				</div>
+			</div>
 		<div class = "form-group">
 			<label>Phone No.</label>
-			<input type="text" [(ngModel)] = "phone" name ="phone" class = "form-control" required>
+			<input type="text" name ="phone" class = "form-control" ngModel #phoneUser="ngModel" required maxlength="10" minlength="10" pattern="[0][0-9]*" placeholder="0xxxxxxxxx">
 		</div>
-		<div class = "form-group">
-			<label>Username</label>
-			<input type="text" [(ngModel)] = "username" name ="username" class = "form-control" required>
-		</div>
+			<div *ngIf="phoneUser?.touched && phoneUser.errors" class="alert alert-danger" style="width: 100%;">
+				<div *ngIf="phoneUser.errors?.required">
+					Phone Number is Required
+				</div>
+				<div *ngIf="phoneUser.errors?.pattern || phoneUser.errors?.minlength">
+					Invalid Phone Number
+				</div>
+			</div>
 		<div class = "form-group">
 			<label>Email</label>
-			<input type="text" [(ngModel)] = "email" name ="email" class = "form-control" required>
+			<input type="text" name ="email" class = "form-control" ngModel #emailUser="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$" placeholder="example@gmail.com">
 		</div>
+			<div *ngIf="emailUser?.touched && emailUser.errors" class="alert alert-danger" style="width: 100%;">
+				<div *ngIf="emailUser.errors?.required">
+					Email is Required
+				</div>
+				<div *ngIf="emailUser.errors?.pattern">
+					Invalid Email
+				</div>
+			</div>
 		<div class = "form-group">
 			<label>Password</label>
-			<input type="password" [(ngModel)] = "password" name ="password" class = "form-control" required>
+			<input type="password" name ="password" class = "form-control" ngModel #passwordUser="ngModel" required maxlength="35" minlength="8" placeholder="at least 8 characters">
 		</div>
+			<div *ngIf="passwordUser?.touched && passwordUser.errors" class="alert alert-danger" style="width: 100%;">
+				<div *ngIf="passwordUser.errors?.required">
+					Password is Required
+				</div>
+				<div *ngIf="passwordUser.errors?.minlength">
+					Invalid Password
+				</div>
+			</div>
 		
-		<input type="submit" class ="btn btn-success" value = "Submit">
+		<button type="submit" name="button" class ="btn btn-success" [disabled]="frm.invalid">Submit</button>
 	</form>
+
+  </div>	
 </div>
 <hr>
 <div class = "container">

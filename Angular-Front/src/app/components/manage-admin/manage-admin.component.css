@@ -21,27 +21,28 @@ input[type=text] {
     border-radius: 6px;
     background-color: white;
     color: black;
-    width: 40%;
+    width: 100%;
 }
 
-input[type=submit] {
+button[type=submit] {
     border: 1px solid #4d4d4d;
     border-radius: 6px;
     color: black;
 }
 
-textarea{
-    border: 1px solid #4d4d4d;
-    border-radius: 6px;
-    background-color: white;
-    color: black;
-    width: 40%;
-}
 
 input[type=password] {
     border: 1px solid #4d4d4d;
     border-radius: 6px;
     background-color: white;
     color: black;
-    width: 40%;
+    width: 100%;
+}
+
+input[type=email] {
+    border: 1px solid #4d4d4d;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    width: 100%;
 }

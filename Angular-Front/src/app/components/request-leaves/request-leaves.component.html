@@ -1,21 +1,37 @@
 <div class = "container">
-	<h2 class = "page-header"> Request Leaves</h2>
-	<form (submit) = "request()">
+  <div class="jumbotron" style="width: 50%; background-color:#808080; border: 1px solid white;
+    border-radius: 10px;">	
+	<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Request Leaves</h2>
+	<form #frm="ngForm" (ngSubmit) = "request(frm)">
 		
 		<div class = "form-group">
 			<label>Date</label>
-			<input type="text" bsDaterangepicker [(ngModel)] = "date" name ="date" class = "form-control" required>
+			<input type="text" bsDaterangepicker name ="date" class = "form-control" ngModel #dateRequest="ngModel" required placeholder="Select date range">
 		</div>
+		    <div *ngIf="dateRequest?.touched && dateRequest.errors" class="alert alert-danger" style="width: 100%;">
+				<div *ngIf="dateRequest.errors?.required">
+					Date is Required
+				</div>
+			</div>
 		<div class = "form-group">
 			<label>Reason</label>
-			<input type="text" [(ngModel)] = "reason" name ="reason" class = "form-control" required>
+			<input type="text" name ="reason" class = "form-control" ngModel #reasonRequest="ngModel" required maxlength="25" minlength="5" placeholder="Reason">
 		</div>
+		    <div *ngIf="reasonRequest?.touched && reasonRequest.errors" class="alert alert-danger" style="width: 100%;">
+				<div *ngIf="reasonRequest.errors?.required">
+					Reason is Required
+				</div>
+				<div *ngIf="reasonRequest.errors?.minlength">
+					Invalid Request
+				</div>
+			</div>
 		<div class = "form-group">
 			<label>More Text</label><br>
-			<textarea [(ngModel)]='describe' name ="describe" rows="3" cols="10"></textarea>
+			<textarea name ="describe" rows="3" cols="10" class = "form-control" ngModel #describeRequest="ngModel" maxlength="50" placeholder="More......(limit 50)">></textarea>
 		</div>
-		<input type="submit" class ="btn btn-success" value = "Submit">
+		<button type="submit" name="button" class ="btn btn-success" [disabled]="frm.invalid">Submit</button>
 	</form>
+  </div>
 </div>
 <hr>
 <div class = "container">

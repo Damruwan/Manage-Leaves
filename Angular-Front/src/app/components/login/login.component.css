@@ -3,7 +3,7 @@ input[type=text] {
     border-radius: 6px;
     background-color: white;
     color: black;
-    width: 40%;
+    width: 100%;
 }
 
 input[type=submit] {
@@ -17,6 +17,14 @@ input[type=password] {
     border-radius: 6px;
     background-color: white;
     color: black;
-    width: 40%;
+    width: 100%;
+}
+
+input[type=email] {
+    border: 1px solid #4d4d4d;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    width: 100%;
 }
 

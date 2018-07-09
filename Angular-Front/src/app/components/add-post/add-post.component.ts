@@ -35,14 +35,14 @@ export class AddPostComponent implements OnInit {
        })
   }
 
-  addPost(){
+  addPost(form){
     const post = {
        name:this.name,
        post:this.post,
        email:this.email,
-       about:this.about,
-       date:this.date,
-       content:this.content
+       about:form.value.about,
+       date:form.value.date,
+       content:form.value.content
     };
     this.postService.sendPost(post).subscribe(request=>{
          this.posts.push(request);

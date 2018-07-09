@@ -1,6 +1,6 @@
 <div class = "container" id="content" #content>
 	<div *ngIf="user">
-		<h1>Leaves of {{user.full_name}}</h1>
+		<h1 class = "page-header">Leaves of {{user.full_name}}</h1>
 		<br>
 		<h3>Post : {{user.post}}</h3>
 		<h3>Contact : {{user.phone}}</h3>
@@ -19,7 +19,7 @@
 			   <td>{{hry.date.split(',')[0] | date}} - {{hry.date.split(',')[1] | date}}</td>
 			   <td>{{hry.reason}}</td>
 			   <td>{{hry.describe}}</td>
-			   <th style="color:red;">{{hry.state}}</th>
+			   <td style="color:red;">{{hry.state}}</td>
 			</tr>
 			
 		</table>

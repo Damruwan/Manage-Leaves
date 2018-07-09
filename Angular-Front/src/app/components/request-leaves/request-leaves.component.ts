@@ -37,14 +37,14 @@ export class RequestLeavesComponent implements OnInit {
        })
   }
 
-  request(){
+  request(form){
     const request = {
        name:this.name,
        post:this.post,
        email:this.email,
-       date:this.date,
-       reason:this.reason,
-       describe:this.describe
+       date:form.value.date,
+       reason:form.value.reason,
+       describe:form.value.describe
     };
     this.requestService.sendRequest(request).subscribe(request=>{
          this.requests.push(request);

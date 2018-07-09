@@ -17,7 +17,6 @@ export class UpdateUserComponent implements OnInit {
   full_name:String;
   post:String;
   phone:String;
-  username:String;
   email:String;
   password:String;
   state:String;
@@ -41,7 +40,6 @@ export class UpdateUserComponent implements OnInit {
      this.authService.getUserToUpdate(this.id).subscribe(user=>{
           this.full_name = user.full_name,
 		  this.phone = user.phone,
-		  this.username = user.username,
 		  this.email = user.email,
 		  this.password = user.password,
 		  this.state = user.state,
@@ -56,7 +54,6 @@ export class UpdateUserComponent implements OnInit {
        full_name:this.full_name,
        post:this.post,
        phone:this.phone,
-       username:this.username,
        email:this.email,
        password:this.password,
        state:this.state

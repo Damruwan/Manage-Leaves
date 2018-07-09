@@ -15,7 +15,6 @@ export class ManageAdminComponent implements OnInit {
   
   full_name:String;
   phone:String;
-  username:String;
   email:String;
   password:String;
   state:String;
@@ -38,34 +37,37 @@ export class ManageAdminComponent implements OnInit {
       })
   }
 
-   registerData(){
+   registerData(form){
     
-    this.checkPost();
+    this.checkPost(form);
     const user = {
-       full_name:this.full_name,
+       full_name:form.value.full_name,
        post:this.post,
-       phone:this.phone,
-       username:this.username,
-       email:this.email,
-       password:this.password,
-       state:this.state
+       phone:form.value.phone,
+       email:form.value.email,
+       password:form.value.password,
+       state:form.value.state
     };
 
     this.authService.registerUser(user).subscribe(user=>{
-         this.users.push(user);
-         this.authService.getUser().subscribe(user=>{
-             this.users = user;
-         }); 
+        if(user.state){
+	        this.users.push(user);
+	        this.authService.getAllUsers().subscribe(user=>{
+	            this.users = user;
+	        });
+	    }else{
+	       this.flashMessage.show(user.msg , { cssClass: 'alert-danger', times:3000});
+	    }      
     });   
   
   }
 
-  checkPost(){
-     if(this.state == '0'){
+  checkPost(form){
+     if(form.value.state == '0'){
         this.post = 'head';
-     }else if(this.state == '1'){
+     }else if(form.value.state == '1'){
         this.post = 'admin';
-     }else if(this.state == '2'){
+     }else if(form.value.state == '2'){
         this.post = 'staff';
      }
 

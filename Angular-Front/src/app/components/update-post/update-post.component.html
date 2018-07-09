@@ -1,13 +1,15 @@
 <div class = "container">
-	<h2 class = "page-header"> Update Posts</h2>
+  <div class="jumbotron" style="width: 50%; background-color:#808080; border: 1px solid white;
+    border-radius: 10px;">	
+	<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Edit News</h2>
 	<form (submit) = "updateData()">
 		<div class = "form-group">
 			<label>About</label>
-			<input type="text" [(ngModel)] = "about" name ="about" class = "form-control" required>
+			<input type="text" [(ngModel)] = "about" name ="about" class = "form-control">
 		</div>
 		<div class = "form-group">
 			<label>Date</label>
-			<input type="text" [(ngModel)] = "date" name ="date" class = "form-control" required>
+			<input type="text" [(ngModel)] = "date" name ="date" class = "form-control">
 		</div>
 		<div class = "form-group">
 			<label>Content</label><br>
@@ -21,4 +23,5 @@
 			<input type="button" (click) = "redirectBack()" value= "back" class ="btn btn-warning" style="border: 1px solid #4d4d4d;">
         </div>
 	</form>
+  </div>	
 </div>

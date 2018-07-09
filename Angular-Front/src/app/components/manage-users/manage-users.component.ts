@@ -16,7 +16,6 @@ users: Users[];
   
   full_name:String;
   phone:String;
-  username:String;
   email:String;
   password:String;
 
@@ -36,23 +35,25 @@ users: Users[];
        })
   }
 
-   registerData(){
-    
+   registerData(form){
     const user = {
-       full_name:this.full_name,
+       full_name:form.value.full_name,
        post:'staff',
-       phone:this.phone,
-       username:this.username,
-       email:this.email,
-       password:this.password,
+       phone:form.value.phone,
+       email:form.value.email,
+       password:form.value.password,
        state:'2'
     };
 
     this.authService.registerUser(user).subscribe(user=>{
-         this.users.push(user);
-         this.authService.getUser().subscribe(user=>{
-             this.users = user;
-         }); 
+         if(user.state){
+             this.users.push(user);
+             this.authService.getUser().subscribe(user=>{
+                 this.users = user;
+             }); 
+         }else{
+             this.flashMessage.show(user.msg , { cssClass: 'alert-danger', times:3000});
+         } 
     });   
   
   }

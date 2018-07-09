@@ -1,5 +1,7 @@
 <div class = "container">
-	<h2 class = "page-header"> Update Users</h2>
+  <div class="jumbotron" style="width: 50%; background-color:#808080; border: 1px solid white;
+    border-radius: 10px;">	
+	<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Edit Users</h2>
 	<form (submit) = "updateData()">
 		<div class = "form-group">
 			<label>Name</label>
@@ -10,10 +12,6 @@
 			<input type="text" [(ngModel)] = "phone" name ="phone" class = "form-control" required>
 		</div>
 		<div class = "form-group">
-			<label>Username</label>
-			<input type="text" [(ngModel)] = "username" name ="username" class = "form-control" required>
-		</div>
-		<div class = "form-group">
 			<label>Email</label>
 			<input type="text" [(ngModel)] = "email" name ="email" class = "form-control" required>
 		</div>
@@ -21,7 +19,7 @@
 			<label>Password</label>
 			<input type="text" [(ngModel)] = "password" name ="password" class = "form-control" required>
 		</div>
-		<h2 class = "page-header"> Grant Access</h2>
+		<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid #4d4d4d; border-radius: 10px;" align="center">Grant Access</h2>
 		<div class = "form-group">
 			<label>Level</label>
 			<input type="text" [(ngModel)] = "state" name ="state" class = "form-control" required>
@@ -34,4 +32,5 @@
 			<input type="button" (click) = "redirectBack()" value= "back" class ="btn btn-warning" style="border: 1px solid #4d4d4d;">
         </div>
 	</form>
+  </div>
 </div>
