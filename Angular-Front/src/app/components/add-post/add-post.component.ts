@@ -18,7 +18,6 @@ export class AddPostComponent implements OnInit {
   post = this.authService.getAuthPost();
 
   about:String;
-  date:String;
   content:String;
 
   constructor(
@@ -41,14 +40,17 @@ export class AddPostComponent implements OnInit {
        post:this.post,
        email:this.email,
        about:form.value.about,
-       date:form.value.date,
        content:form.value.content
     };
     this.postService.sendPost(post).subscribe(request=>{
-         this.posts.push(request);
-         this.postService.getAllPost().subscribe(request=>{
-             this.posts = request;
-         }); 
+         if(request.state){
+	         this.posts.push(request);
+	         this.postService.getAllPost().subscribe(request=>{
+	             this.posts = request;
+	         });
+         }else{
+             this.flashMessage.show(request.msg , { cssClass: 'alert-danger', times:3000});
+         } 
     }); 
   
   }

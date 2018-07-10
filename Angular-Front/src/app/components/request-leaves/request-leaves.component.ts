@@ -47,10 +47,14 @@ export class RequestLeavesComponent implements OnInit {
        describe:form.value.describe
     };
     this.requestService.sendRequest(request).subscribe(request=>{
-         this.requests.push(request);
-         this.requestService.getRequest(this.email).subscribe(request=>{
-             this.requests = request;
-         }); 
+         if(request.state){
+             this.requests.push(request);
+             this.requestService.getRequest(this.email).subscribe(request=>{
+                 this.requests = request;
+             });
+         }else{
+             this.flashMessage.show(request.msg , { cssClass: 'alert-danger', times:3000});
+         }     
     }); 
   
   }

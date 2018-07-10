@@ -1,22 +1,32 @@
-<div class = 'container'>
-<h1 class = "page-header">PROFILE</h1>	
+<div class="container">
+ <div class = "col-md-6">
+   <h1 class = "page-header">PROFILE</h1>	
 	<div *ngIf="user">
-		<div class = "row"  style="color:white;">
-			<h3>NAME : {{user.full_name}}</h3>
+		<div class="jumbotron" style="width: 100%; background-color:#e6e6e6; border: 1px solid gray;
+	         border-radius: 10px;" align="left">
+			<div class = "row"  style="color:black;">
+				<h3>NAME : {{user.full_name}}</h3>
+			</div>
+			<br>
+			<div class = "row"  style="color:black;">
+				<h3>POST : {{user.post}}</h3>
+			</div>
+			<br>
+			<div class = "row"  style="color:black;">
+				<h3>CONTACT NO : {{user.phone}}</h3>
+			</div>
+			<br>
+			<div class = "row"  style="color:black;">
+				<h3>EMAIL : {{user.email}}</h3>
+			</div>
 		</div>
-		<br>
-		<div class = "row"  style="color:white;">
-			<h3>POST : {{user.post}}</h3>
-		</div>
-		<br>
-		<div class = "row"  style="color:white;">
-			<h3>CONTACT NO : {{user.phone}}</h3>
-		</div>
-		<br>
-		<div class = "row"  style="color:white;">
-			<h3>EMAIL : {{user.email}}</h3>
-		</div>
-		<br>
     </div>
+  </div>
+
+
+  <div class="col-md-6">
+  	<br>
+	 <img style="width:600px;height: 468px;" src="assets/image/home.jpg" alt="image">	
+  </div>
 </div>
 

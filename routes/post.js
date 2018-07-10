@@ -10,13 +10,20 @@ router.post("/savePost",function(req, res) {
 		post:req.body.post,
 		email:req.body.email,
 		about:req.body.about,
-		date:req.body.date,
-		content:req.body.content
+		content:req.body.content,
+		array:{
+			about:req.body.about,
+		    content:req.body.content
+		}
 	});
 
 	Post.savePost(newPost,function (err,post) {
 		if(err) {
-			res.json({state:false,msg:" not sent post"});
+			if(err.errors.array){
+               res.json({state:false,msg:"The post is alrady exist"});
+			}else{
+			   res.json({state:false,msg:" not sent post"});
+		    }	
 		}
 		if(post) {
 			res.json({state:true,msg:"sent post"});
@@ -65,7 +72,7 @@ router.put('/updatePost/:id', function(req, res) {
  
         Post.findByIdAndUpdate(req.params.id,
         {
-          $set: {name: req.body.name, post:req.body.post, email:req.body.email, about:req.body.about, date:req.body.date, content:req.body.content}
+          $set: {name: req.body.name, post:req.body.post, email:req.body.email, about:req.body.about, content:req.body.content, array:{about:req.body.about, content:req.body.content}}
         },
         {
           new: true

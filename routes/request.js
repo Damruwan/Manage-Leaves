@@ -14,12 +14,20 @@ router.post("/manageRequest",function(req, res) {
 		email:req.body.email,
 		date:req.body.date,
 		reason:req.body.reason,
-		describe:req.body.describe
+		describe:req.body.describe,
+		array:{
+			name:req.body.name,
+		    date:req.body.date
+		}    
 	});
 
 	Request.saveRequest(newRequest,function (err,request) {
 		if(err) {
-			res.json({state:false,msg:" not sent request"});
+			if(err.errors.array){
+			   res.json({state:false,msg:req.body.name+" You can not request more leaves on this date"});
+			}else{
+			   res.json({state:false,msg:" not sent request"});
+			}  
 		}
 		if(request) {
 			res.json({state:true,msg:"sent request"});
@@ -65,6 +73,7 @@ router.post("/acceptRequest",function(req, res) {
 		name:req.body.name,
 		post:req.body.post,
 		email:req.body.email,
+		req_on:req.body.created_at,
 		date:req.body.date,
 		reason:req.body.reason,
 		describe:req.body.describe,
@@ -87,6 +96,7 @@ router.post("/notacceptRequest",function(req, res) {
 		name:req.body.name,
 		post:req.body.post,
 		email:req.body.email,
+		req_on:req.body.created_at,
 		date:req.body.date,
 		reason:req.body.reason,
 		describe:req.body.describe,

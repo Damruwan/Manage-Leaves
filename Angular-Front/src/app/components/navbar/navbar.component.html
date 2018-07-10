@@ -1,4 +1,5 @@
-<nav class="navbar navbar-inverse" style="background:#404040;">
+<div class="col-md-12">
+<nav class="navbar navbar-inverse" style="background-color:#004d66; height: 60px; font-size: 17px;">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header" >
@@ -13,33 +14,32 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About</a></li>
+        <li><a style="color:white;" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!authService.loggedIn()"><a [routerLink]="['/login']">Login</a></li>
+        <li *ngIf="!authService.loggedIn()"><a style="color:black;" [routerLink]="['/login']">You are not logged in.(<span style="color: white;">Log in</span><span>)</span></a></li>
 
         <li *ngIf="authService.loggedIn()" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello {{user.getAuthName()}} <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:black;background-color: #004d66">You are logged in as <span style="color: white;"> {{user.getAuthName()}} </span><span>(</span><span style="color: white;">Log out</span><span>)</span><span class="caret" style="color: white;"></span></a>
         
           <ul class="dropdown-menu">
-            <li *ngIf="authService.isStaff() || authService.isAdmin() || authService.isHead()"><a [routerLink]="['/profile']">Profile</a></li>
-            <li *ngIf="authService.isStaff() || authService.isAdmin()"><a [routerLink]="['/requestLeaves']">Request Leaves</a></li>
-            <li *ngIf="authService.isStaff() || authService.isAdmin()"><a [routerLink]="['/leaveHistory']">History of Leaves</a></li>
-            <li *ngIf="authService.isAdmin()"><a [routerLink]="['/manageUsers']">Manage Staff</a></li>
-            <li *ngIf="authService.isAdmin() || authService.isHead()"><a [routerLink]="['/addPost']">Add Post</a></li>
-            <li *ngIf="authService.isAdmin()"><a [routerLink]="['/reportGenaration']">Report Genaration</a></li>
-            <li *ngIf="authService.isHead()"><a [routerLink]="['/manageAdmin']">Manage Users</a></li>
-            <li *ngIf="authService.isHead()"><a [routerLink]="['/manageLeaves']">Manage Leaves</a></li>
-            <li *ngIf="authService.isHead()"><a [routerLink]="['/controlDates']">Control Dates</a></li>
+            <li *ngIf="authService.isStaff() || authService.isAdmin() || authService.isHead()"><a style="color:black;" [routerLink]="['/profile']">Profile</a></li>
+            <li *ngIf="authService.isStaff() || authService.isAdmin()"><a style="color:black;" [routerLink]="['/requestLeaves']">Request Leaves</a></li>
+            <li *ngIf="authService.isStaff() || authService.isAdmin()"><a style="color:black;" [routerLink]="['/leaveHistory']">History of Leaves</a></li>
+            <li *ngIf="authService.isAdmin()"><a style="color:black;" [routerLink]="['/manageUsers']">Manage Staff</a></li>
+            <li *ngIf="authService.isAdmin() || authService.isHead()"><a style="color:black;" [routerLink]="['/addPost']">Add News</a></li>
+            <li *ngIf="authService.isAdmin()"><a style="color:black;" [routerLink]="['/reportGenaration']">Report Genaration</a></li>
+            <li *ngIf="authService.isHead()"><a style="color:black;" [routerLink]="['/manageAdmin']">Manage Users</a></li>
+            <li *ngIf="authService.isHead()"><a style="color:black;" [routerLink]="['/manageLeaves']">Manage Leaves</a></li>
+            <li *ngIf="authService.isHead()"><a style="color:black;" [routerLink]="['/controlDates']">Control Dates</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#" (click)="logoutUser()">Logout</a></li>
+            <li><a href="#" (click)="logoutUser()" style="color:black;">Logout</a></li>
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+</div>
 

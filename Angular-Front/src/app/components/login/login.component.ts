@@ -23,11 +23,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-	  loginUser(){
+	  loginUser(form){
 
 	    const user = {
-	       email:this.email,
-	       password:this.password
+	       email:form.value.email,
+	       password:form.value.password
 	    };
 
         this.authService.loginUser(user).subscribe(res=>{

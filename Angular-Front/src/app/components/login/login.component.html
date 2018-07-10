@@ -1,19 +1,36 @@
+	
 <br><br>
 <div class = "container" align="center">
-  <div class="jumbotron" style="width: 50%; background-color:#808080; border: 1px solid white;
-    border-radius: 10px;">	
-	<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Login</h2>
-	<form (submit) = "loginUser()">
+  <div class="jumbotron" style="width: 50%; background-color:#d9d9d9; border: 1px solid white;
+    border-radius: 10px; border: 1px solid gray;">	
+	<h2 class = "page-header" style="background-color:#006080; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Login</h2>
+	<br>
+	<form #frm="ngForm" (ngSubmit) = "loginUser(frm)">
 		<div class = "form-group">
-			<br>
-			<input type="email" [(ngModel)] = "email" name ="email" class = "form-control" placeholder="Enter your email">
+			<input type="text" name ="email" class = "form-control" ngModel #emailUser="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$" placeholder="Enter your e-mail">
 		</div>
-			<div class = "form-group">
+			<div *ngIf="emailUser?.touched && emailUser.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
+				<div *ngIf="emailUser.errors?.required">
+					Email is Required
+				</div>
+				<div *ngIf="emailUser.errors?.pattern">
+					Invalid Email
+				</div>
+			</div>
 			<br>
-			<input type="password" [(ngModel)] = "password" name ="password" class = "form-control" placeholder="Enter your password">
+		<div class = "form-group">
+			<input type="password" name ="password" class = "form-control" ngModel #passwordUser="ngModel" required maxlength="35" minlength="8" placeholder="Enter your password">
 		</div>
+			<div *ngIf="passwordUser?.touched && passwordUser.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
+				<div *ngIf="passwordUser.errors?.required">
+					Password is Required
+				</div>
+				<div *ngIf="passwordUser.errors?.minlength">
+					Invalid Password
+				</div>
+			</div>
 		<br>
-		<input type="submit" class ="btn btn-success" value = "Login">
+		<button type="submit" name="button" class ="btn btn-success" [disabled]="frm.invalid">Login</button>
 	</form>
  </div>	
 </div>

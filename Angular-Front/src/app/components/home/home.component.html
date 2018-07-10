@@ -1,40 +1,384 @@
-<div class = "container">
-<h1 class = "page-header">Site News</h1>	
-	<div *ngFor = "let post of posts">
-	  <div class="row" style="background-color: #d9d9d9;height: 400px;border: 1px solid #4d4d4d;
-      border-radius: 10px;">
-	   <div class = "row">
-	   	  <div class = "col-md-12">
-			<h1>{{post.about}}</h1>
-		  </div>  
-	   </div>	
-       <div class = "row">
-		  <div class = "col-md-1">
-			<h3>Post</h3>
-		  </div>
-		  <div class = "col-md-1">
-			<h3>by</h3>
-		  </div>
-		  <div class = "col-md-1">
-			<h3>{{post.name}}</h3>
-		  </div>
-		  <div class = "col-md-1">
-			<h3>({{post.post}})</h3>
-		  </div>
-		  <div class = "col-md-1">
-			<h3>On</h3>
-		  </div>
-		  <div class = "col-md-4">
-			<h3>{{post.date | date}}</h3>
-		  </div>	
+        
+	<div class="col-md-2">
+		<div class="jumbotron" style="width: 100%; background-color:#e6e6e6; border: 1px solid gray;
+	         border-radius: 10px;" align="center">		
+                          
+		       	   
+		       	     <div class="container" align="left" style="color:black;font-size: 11px;">
+		       	     	
+                        <div class="frame">
+			       	     	<div class="head">The Director</div><br>
+							<li>Prof. K.P. Hewagamage – BSc(Col) , PhD(Hiroshima), SMIEEE (Professor/Director/Head IUD)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">The Directors Office</div><br>
+							<li>Mrs. Renuka Perera (Computer Applications Assistant)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">Deputy Director</div><br>
+							<li>Dr. D.A.S. Atukorale – BSc Hons(Col), PhD(Queensland) (Deputy Director/Senior Lecturer Gr. I/Head CIS)</li>
+						</div>	
+                        <hr>
+                        <div class="frame">
+							<div class="head">Quality Assurance Cell</div><br>
+							<li>Dr. K.H.E.L.W. Hettiarachchi, Senior Lecturer Gr. II, Secretary QAC</li>
+						</div>	
+                        <hr>
+                        <div class="frame">
+							<div class="head">Department Of Communication And Media Technologies</div><br>
+							<h5>Head of the Department</h5>
+
+							<li>Dr. G.D.S.P. Wimalaratne – BSc(Col), PhD(Salford), SMIEEE, MCS(SL)(Senior Lecturer Gr. I/Head CMT)</li>
+
+							<h5>Staff</h5>
+	                        
+							<li>Prof. N.D. Kodikara -BSc(Col.), Dip.in App.Stat(Col) , MSc(Manchester), PhD(Manchester)(Professor)</li>
+							<li>Dr. D.D. Karunaratne – BSc (Col), MSc (Swansea), PhD(Cardiff), MCS(SL)(Senior Lecturer Gr. I)</li>
+							<li>Dr. T.N.K. De Zoysa – BSc(Col), PhLic(Stockholm), PhD(Stockholm) (Senior Lecturer Gr. II)</li>
+							<li>Dr. K.L. Jayaratne – BSc(Col), PhD(Western Syndey), MACS, MCS(SL)(Senior Lecturer Gr. II)</li>
+							<li>Mr. K.P.M.K. Silva – BSc (Col), MSc(York) (Lecturer)</li>
+							<li>Mr. S.T. Nandasara – BDev(SL), MCS(SL), MACS, MBCS (Lecturer)</li>
+							<li>Dr. T.M.H.A. Usoof BSc(Pdn), PhD(Umea) (Senior LecturerÂ Gr. II)</li>
+							<li>Dr. M.D.R.N. Dayaratne – BSc(Col) (Lecturer )</li>
+							<li>Ms L.N.C. De Silva – BSc (Pdn) (Lecturer (P))</li>
+							<li>Mr. S.S.P. Mathara Arachchi, BSc (OUSL), PGDip, PGDip(IM) (SLIIT), MScÂ  (SLIIT) (Lecturer (P))</li>
+							<li>Mr. R.S. Madanayake, BSc (Col) MSc(Col) (Lecturer (P))</li>
+							<li>Mr. H. Malinda Siriwardana, BSc (Pdn), PGDip, MSc(Col) (Lecturer (P)/on Study Leave)</li>
+							<li>Mr. G.P.N. Boteju – BCom (Col), PGDip(Col) (Instructor Gr. II)</li>
+							<li>Mrs. K P U Jayasinghe B.Sc. (Col)</li>
+							<li>Mr. R. N. Rajapakse B.Sc. (Col)</li>
+							<li>Mr. D. D. A. C. J. Jayalath B.Sc. (Col)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">Department Of Computation And Intelligent Systems</div><br>
+							<h5>Head of the Department</h5>
+
+							<li>Dr. D.A.S. Atukorale – BSc Hons(Col), PhD(Queensland) (Deputy Director/Senior Lecturer Gr. I/Head CIS)</li>
+
+							<h5>Staff</h5>
+
+							<li>Dr. A.R. Weerasinghe – BSc(Col), MSc(Cardiff), PhD(Cardiff) (Senior Lecturer Gr. I)</li>
+							<li>Dr. D.N. Ranasinghe – BSc(Lond), MSc(Lond), DIC(Lond), PhD(Cardiff) (Senior Lecturer Gr. I)</li>
+							<li>Mr. G.P. Seneviratne – BSc(Col), PGDip(Col), MSc(Cardiff), MPhil(Cardiff), MIEEE (Senior Lecturer Gr. I)</li>
+							<li>Dr. H.L. Premaratne – BSc(SL), PGDip(Col), MSc(Col), Ph.Lic(Chalmers), PhD(Chalmers) (Senior Lecturer Gr. I)</li>
+							<li>Dr. C.I. Keppitiyagama – BSc(Col), MSc(British Columbia), PhD (British Columbia) (Senior Lecturer Gr. I)</li>
+							<li>Dr. H.E.M.H.B. Ekanayake – BSc(Col), MPhil(Col), PhD (Stockholm)(Lecturer)</li>
+							<li>Dr. Mrs. F. H. A. M. Premachandra, BSc(Col),Â PhD(ANU)Â (Lecturer (P))</li>
+							<li>Dr. Manjusri I.E. Wickramasinghe, BSc(Col),PhD(Monash) (Lecturer (P))</li>
+							<li>Mr. A. P. Sayakkara B.Sc. (Col)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">Department Of Information Systems Engineering</div><br>
+							<h5>Head of the Department</h5>
+
+							<li>Dr. (Mrs.) M.D.J.S. Goonatillake – BSc(Col), MSc(Keel), PhD(Cardiff) (Senior Lecturer Gr. I/Head ISE)</li>
+
+							<h5>Staff</h5>
+
+							<li>Mr. G.K.A. Dias – BSc(Col), PGDip(Essex), MIDPM, MACS, MCS(SL), MPhil(Cardiff) (Senior Lecturer Gr. I)</li>
+							<li>Dr. (Mrs.) M.D.J.S. Goonatillake – BSc(Col), MSc(Keel), PhD(Cardiff) (Senior Lecturer Gr. I/Head ISE)</li>
+							<li>Dr. (Mrs.) Y. Ekanayaka – BSc(UK), PhD(Brunel) (Senior Lecturer Gr. II)</li>
+							<li>Dr. (Mrs.) S.M.K.D. Arunatilake – BSc(Col), MBA (SJP), PhD(Western Sydney) (Senior Lecturer Gr. II)</li>
+							<li>Dr. H.A. Caldera – BSc(Col), PGDip(Col), MSc(Col), PhD(Western Sydney)(Senior Lecturer Gr. I)</li>
+							<li>Dr. M.G. Noel A.S. Fernando – BSc (Col), MSc (Col), PhD(Col) MCS(SL), MIEEE, SEDA(UK) (Senior Lecturer Gr. II)</li>
+							<li>Mrs. M.W.A.C.R. Wijesinghe – BSc(Pdn), PGDip(Col), MSc(Col), MPhil(Col) (Senior Lecturer Gr. II)</li>
+							<li>Mr. W.V. Welgama – BSc(Col), MPhil(Col) (Senior Lecturer Gr. II)</li>
+							<li>Dr. Ms. T.A. Weerasinghe – BSc(Col), PGDip, MSc(Col), PhLic(Stockholm), PhD(Stockholm) (Lecturer (P))</li>
+							<li>Ms. R.M.P.N. Somaratne – BSc(SLIIT),Â MSc(Kln) (Lecturer (P)) (Study leave)</li>
+							<li>Mr. L.P. Jayasinghe – BSc(Col) (Instructor Gr. I)</li>
+							<li>Dr. T Sritharan B.Sc. (Hons)(Jaffna)Ph.D. (Sussex,UK)</li>
+							<li>Mr. H K T C Halloluwa B.Sc.(SLIIT), MIEEE (Study Leave)</li>
+							<li>Ms. R. A. Y. S. Ranasighe B.Sc. (Rajarata)</li>
+							<li>Mr. R. A. H. D. Perera B.Sc. (Col)</li>
+							<li>Ms. D. N. Perera B.Sc. (Col)</li>
+							<li>Mr. R. M. U. A. Rathnayake B.Sc. (Col)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">E-Learning Centre</div><br>
+							<h5>Co-ordinator</h5>
+
+							<li>Dr. D.D. Karunaratne BSc (Col), MSc (Swansea), PhD (Cardiff), (Senior Lecturer Gr. I)</li>
+
+							<h5>Staff</h5>
+
+							<li>K.M.G.B. Nishakumari BSc (Col) , BIT (Col), MSc (Edinburgh) (Scientific Assistant Grade II) (Team Leader)</li>
+							<li>M.B.P. Disanayake (Instructional Designer)</li>
+							<li>G.N.M. Gangodawila (Junior Instructional Designer)</li>
+							<li>H.L.P.M. Madhushanka (Assistant LMS Administrator)</li>
+							<li>K.K.A. Nishanthi (Content Developer)</li>
+							<li>R.M. Nuwan Dammika (Content Developer)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">External Degrees Centre (EDC)</div><br>
+							<h5>Senior Assistant Registrar</h5>
+
+							<li>Ms. S.D. Chandralatha</li>
+
+							<h5>Co-ordinator</h5>
+
+							<li>Mr. L.P. Jayasinghe – BSc (Col)(Instructor Gr. I)</li>
+
+							<h5>Staff</h5>
+
+							<li>Ms. J.K.D.I.K. Thilakaratne (Clerk)</li>
+							<li>Mr. K.S.U. Kumara (Computer Application Assistant)</li>
+							<li>Ms. G.H.P.I. De Silva (Computer Application Assistant)</li>
+							<li>Ms. S.J. Samarasekara (Project Assistant)</li>
+							<li>Mr. V.S. Fonseka (Multi Duty Assistant)</li>
+							<li>Ms. P.K.G.P. Fernando (Multi Duty Assistant)</li>
+							<li>Mr. H.A.S. Chathuranga (Multi Duty Assistant)</li>
+							<li>Ms. R.P. Balasuriya (Graduate Project Officer)</li>
+							<li>Ms.Nalisha Gajasinghe (Computer Application Assistant)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">Computer Services Centre (CSC)</div><br>
+							<h5>Co-ordinator</h5>
+
+							<li>Dr. K.L. Jayaratne – BSc(Col), PhD(Western Syndey), MACS, MCS(SL)(Senior Lecturer Gr. II)</li>
+
+							<h5>Staff</h5>
+
+							<li>Mrs. P.S. Goonathilake (Assistant Secretary)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">Advanced Digital Media Technology Centre (ADMTC)</div><br>
+							<h5>Co-ordinator</h5>
+
+							<li>Mr. S.T. Nandasara – BDev(SL), MCS(SL), MACS, MBCS (Lecturer)</li>
+                        </div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">Professional Development Centre (PDC)</div><br>
+							<h5>Co-ordinator</h5>
+
+							<li>Dr. (Mrs.) S.M.K.D. Arunatilake – BSc(Col), MBA (SPJ), PhD (UWS)(Senior Lecturer Gr. II)</li>
+						</div>
+                        <hr>
+                        <div class="frame">
+							<div class="head">Establishments & Administration</div><br>
+							<h5>Deputy Registrar</h5>
+
+							<li>Mr. K.K.K. Dharmathilaka – BA Hons (Col), PGDBFA (ICASL), MSSc (Kln), MBA (Kln)</li>
+
+							<h5>Staff</h5>
+
+							<li>Ms.L.C. Karunasagara(Computer Applications Assistant)</li>
+							<li>Ms. A.S. Gunathilake (Computer Applications Assistant)</li>
+							<li>Ms. J. Sagarika Rathnayake (Office Machine Operator)</li>
+							<li>Mr. P.K.S. Wasantha (Labourer)</li>
+							<li>Mr. R.M. Dilip (Labourer)</li>
+							<li>Mr. N.T.N.S. Jayawardena (Labourer)</li>
+							<li>Mr. W.N.S. Fonseka (Labourer)</li>
+							<li>Mr. W.W.K.C. Priyankara (Driver)</li>
+							<li>Mr. K.L.S. Kumara (Driver)</li>
+						</div>
+						<hr>
+						<div class="frame">
+			                <div class="head">Academic & Publications – Undergraduate</div><br>
+							<h5>Assistant Registrar</h5> 
+
+							<li>Ms. S.D. Chandralatha</li>
+
+							<h5>Staff</h5>
+
+							<li>Ms. H.D. Jayanthi Karunaratne (Clerk)</li>
+							<li>Ms. P.G.R. Dilrukshi (Computer Application Assistant)</li>
+							<li>Mr. R.M.L. Nishantha (Computer Application Assistant)</li>
+					    </div>
+					    <hr>
+                    </div>		          
+	    </div>
+	</div> 
+
+	<div class="col-md-8">
+          
+		     <div class="jumbotron" style="width: 100%; height: 600px; background-color:#e6e6e6; border: 1px solid gray;
+		         border-radius: 10px;" align="center">
+		       <div class="content" style="height: 533px;"> 
+		       <br><br> 
+		          <img style="width:180px;height: 180px;" src="assets/image/image.jpg" alt="image">		
+			      <div class="container" align="center">
+			      	<h2>University of Colombo School of Computing</h2>
+			      	<br>
+			      	<h5 style="color: black;">Welcome to the Virtual Requesting Leaves Environment for the UCSC Staff Members 2017/2018</h5>
+			      	<h5 style="color: black;">UCSC කාර්ය මණ්ඩලයේ සාමාජිකයන් සඳහා වන අතථ්‍ය නිවාඩු ඉල්ලීම් පරිස්ථිතියට වෙත ඔබව සාදරයෙන් පිළිගනිමු!</h5>
+			      	<h5 style="color: black;">UCSC ஊழியர்கள் உறுப்பினர்கள் மெய்நிகர் கோரிக்கை விடுப்பு சூழலுக்கு வரவேற்கிறோம்</h5>
+			      </div>
+			   </div>      
+		     </div>
+	         <h3>Site announcements</h3>
+
+
+		<div *ngFor = "let post of posts">
+			<div class="jumbotron" style="width: 100%; background-color:#e6e6e6; border: 1px solid gray;
+	         border-radius: 10px;" align="center">
+	         	<div class="container" align="left" style="color:black;font-size: 15px;">
+	         	   <div class="content">
+	         	     <div class="about">
+	         			<div style="color: black; font-size: 20px;">{{post.about}}</div>
+		         	    <p style="color: black; font-size: 15px;">by <span style="color: blue;">{{post.name}}({{post.post}}) </span>- <span></span> <span style="color:blue;">{{post.created_at | date:"MMMM d, y"}} </span><span>at </span><span style="color:blue;">{{post.created_at | date:"h:mm:ss a"}}</span></p>
+	         	     </div>
+	         	     <br>	
+		             {{post.content}}
+		           </div>
+		        </div>  
+	        </div>	
 	   </div>
-	   <br><br>
-	   <div class = "row">
-	   	  <div class = "col-md-12">
-	   	    <p>{{post.content}}</p>
-	   	  </div>  
-	   </div>
-	  </div>
-	  <br><br>
-   </div>	
-</div>
+	</div> 
+	<div class="col-md-2">
+		<div class="jumbotron" style="width: 100%; background-color:#e6e6e6; border: 1px solid gray;
+	         border-radius: 10px;" align="center">		
+		       
+		       	   <div class="container" align="left" style="color:black;font-size: 15px;">
+		       	   	    
+						<div class="frame">
+							<div class="head">Academic & Publications – Postgraduate</div><br>
+							
+							<h5>Staff</h5>
+
+							<li>Ms. S.F Imam (Staff Assistant)</li>
+							<li>Ms.W.D.D. Sagarika(Computer Application Assistant)</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">Examinations & Registration</div><br>
+							<h5>Senior Assistant Registrar</h5>
+
+							<li>Ms. D.K.M. Ratnayake</li>
+
+							<h5>Staff</h5>
+
+							<li>Ms. M. Sunanda Rajapakse (Senior Staff Assistant)</li>
+							<li>Ms. Jayanthi Rathnayake – BA (SJP) (Computer Application Assistant)</li>
+							<li>Ms. K.R.N. De Silva (Computer Applications Assistant)</li>
+							<li>Mr. D S R C Sawanawadu (Computer Application Assistant)</li>
+							<li>Ms. K.R.N. De Silva (Computer Applications Assistant)</li>
+							<li>Mr. W.C. Priyashantha (Graduate Project Assistant)</li>
+							<li>Ms. W.G.P.P. Wijesinghe (Computer Application Assistant)</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">Finance Division</div><br>
+							<h5>Deputy Bursar</h5>
+
+							<li>Mr. E.M. Gunarathne</li>
+
+							<h5>Senior Assistant Bursar</h5>
+
+							<li>Mr. S.P.G. Nihal -Dip in AC, Professional Level II of (ICASL)</li>
+							<li>Mr. R.M. Weerasiri -Dip in Mgt, BMS Level V (OUSL)</li>
+							<h5>Staff</h5>
+
+							<li>Ms. Chitra Ratnalatha – BCom (Special ) (Col) (Book Keeper)</li>
+							<li>Mr. G.M. Sirisena – (Book Keeper)</li>
+							<li>Mr. A.M.D.H. Attanayake – AAT (Stage I & II) (Shroff)</li>
+							<li>Mr. G.A.D. Nishantha S. Jayawardena (Clerk)</li>
+							<li>Ms. D.S.R. De Silva (Computer Applications Assistant)</li>
+							<li>Mr. I.N.N. Karunaratna (Store Keeper)</li>
+							<li>Ms. S M W G N N Podimanike (Labourer)</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">The Library</div><br>
+							<h5>Staff</h5>
+
+							<li>Ms. R.L.A. Rajapaksa (BLE, SLLA, ALA) (Staff Assistant)</li>
+							<li>Mr. I.H. Amuwitagama (Library Assistant)</li>
+							<li>Mr. D.M.U.A. Prabath (Library Attendant)</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">Engineering Division</div><br>
+							<h5>Head: Engineer (Computer Maintenance)</h5>
+
+							<li>Mr. K S. Goonatillake – BSc(Col), MCS (SL)</li>
+
+							<h5>Staff</h5>
+
+							<li>Mr. D. Nalaka Gunawardena (Technical Officer)</li>
+							<li>Mrs. Kumari Dissanayake (Computer Applications Assistant)</li>
+							<li>Mr. M.G.A. Gayan (Labourer)</li>
+							<li>Mr. H.A. Chandrasena (Caretaker)</li>
+							<li>Mr. Y.A. Sarath Kumara (Caretaker)</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">Centre For Digital Forensics</div><br>
+							<h5>Staff</h5>
+
+							<li>Mr. J.A.C.J. Jayasuriya (Research Assistant)</li>
+							<li>Ms. G.D.S. Ishari (Project Assistant)</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">Network Operations Centre</div><br>
+							<h5>Co-ordinator (Acting)</h5>
+
+							<li>Dr. D.A.S. Atukorale – BSc Hons(Col), PhD(Queensland) (Deputy Director/Senior Lecturer Gr. I/Head CIS)</li>
+
+							<h5>Staff</h5>
+
+							<li>Mr.Vishwajith Mapa, BCA(Bangalore), MScTT(Manipal)Â  (Assistant Network Manager)</li>
+							<li>Mr. Harsha Padmasiri (Network Administrator)</li>
+							<li>Mr. W.K.C. Weerakkody (Technical Officer)</li>
+							<li>Mr. K.M.U Prasanna (Laboratory Attendant)</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">Software Development Unit</div><br>
+							<h5>Consultant</h5>
+
+							<li>Mr. Harsha Wijayawardhana BSc (Miami) – (Consultant/Head of the Unit)</li>
+
+							<h5>Staff</h5>
+
+							<li>Mr. S.D. Wickramadhara – Software Engineer</li>
+							<li>Mr. H.M. Warna Somarathna â€“ Graphics Designer</li>
+							<li>Mr. W.R.W.M.G.K. Weerakoon – Junior Software Engineer</li>
+							<li>Mr. W.M.U.K Karunarathne – Junior Software Engineer</li>
+							<li>Mr. W.M.C.R. Silva – Junior Software Engineer</li>
+							<li>Mr. I.M.S. Dhanushka – Junior Software Engineer</li>
+							<li>Mr. K.K.S. Madhusanka – Junior Software Engineer</li>
+							<li>Mr. R.M.C.B. Rathnayake – Computer Application Assistant</li>
+						</div>
+						<hr>
+                        <div class="frame">
+							<div class="head">Former Academic Staff</div><br>
+
+							<li>Late Professor Vidya Jyothi V.K.Samaranayake – BSc(Cey), DIC, Dip. Stat, PhD (Lond), FNAS (SL), MBCS, MCS(SL)</li>
+							<li>Prof. P.W. Epasinghe – BSc (Cey) DIC, PhD (Lond), INAS (SL)</li>
+							<li>Dr. Buddy Liyanage – BSc (SL), MSc (Nottingham, UK),PhD (Reading, UK), MIET, CCNA, CISSP</li>
+							<li>Dr. E.K. Senevirathne, BSc (SL), MSc (SL), PhD (Col), MACS, MCSSL</li>
+							<li>Dr. R.L. Pears, BSc (Col), PhD (Cardiff)</li>
+							<li>Late Mr. M.J.P.U. Samanthilake, BSc, MSc (Col)</li>
+							<li>Dr. A.P. Madurapperuma, BSc (Havana), MSc (Cardiff), PhD(Cardiff)</li>
+							<li>Dr. P. Gunaratne, BSc (Col) , PhD(Nagoya)</li>
+							<li>Dr. R.K. Rajapakse, BSc (Col) , MSc(Col), MSc (Plymouth), PhD(Plymouth)</li>
+							<li>Dr. Indra Seher, BSc, MSc (Col), PhD (UWS)</li>
+							<li>Dr. M.C. Jayawardena – BSc(Col), PhD(Uppsala), MIEEE, AMCS(SL) (Senior Lecturer Gr. I)</li>
+							<li>Dr. Mrs. A.T. Dharmaratne – BSc(Col), MEng(Hiroshima), PhD(Hiroshima)(Senior Lecturer Gr. I)</li>
+							<li>Mrs. D.K. Amithirigala, BSc (Ruhuna), MSc (Col)</li>
+							<li>Mr. S.J. Paheerathan, BSc (Col), MSc (Col) , PhLic(Stockholm)</li>
+							<li>Mr D.L. Herath – BSc (Col), MA (Kln), MPhil (Cambridge)</li>
+							<li>Mrs. H.R.W.P.Gunathilake – BSc(Col), PGDip(Col), Â MSc(Mrt), MSc(Col), MBCS, MCS(SL)</li>
+							<li>Mr. W.R.M.U.K. Wickramasinghe – BSc(Col), MSc(VU Amsterdam)</li>
+							<li>Mr. D.M. Watugala – BSc(Col)</li>
+							<li>Mr. W.M.R. Weerasuriya – BSc(Lond), MSc(Col), MACS, IAD(UK), SCJP, OCP, OCIAD (Lecturer (P))</li>
+							<li>Mrs. W.M.K.G. Weerasinghe – BSc(Col) (Lecturer (P))</li>
+                        </div>
+                        <hr>
+                   </div>
+
+		     
+		          
+	    </div>
+	</div> 
+

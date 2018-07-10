@@ -1,13 +1,13 @@
 <div class = "container">
-  <div class="jumbotron" style="width: 50%; background-color:#808080; border: 1px solid white;
+  <div class="jumbotron" style="width: 50%; background-color:#d9d9d9; border: 1px solid gray;
     border-radius: 10px;">	
-	<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Add News</h2>
+	<h2 class = "page-header" style="background-color:#006080; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Add News</h2>
 	<form #frm="ngForm" (ngSubmit) = "addPost(frm)">
 		<div class = "form-group">
 			<label>About</label>
-			<input type="text" name ="about" class = "form-control" ngModel #aboutPost="ngModel" required maxlength="30" minlength="5" placeholder="Headline">
+			<input type="text" name ="about" class = "form-control" ngModel #aboutPost="ngModel" required maxlength="80" minlength="5" placeholder="Headline(at least 5 letters and less than 80">
 		</div>
-		    <div *ngIf="aboutPost?.touched && aboutPost.errors" class="alert alert-danger" style="width: 100%;">
+		    <div *ngIf="aboutPost?.touched && aboutPost.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
 				<div *ngIf="aboutPost.errors?.required">
 					Headline is Required
 				</div>
@@ -16,22 +16,16 @@
 				</div>
 			</div>
 		<div class = "form-group">
-			<label>Date</label>
-			<input type="text" bsDatepicker name ="date" class = "form-control" ngModel #datePost="ngModel" required placeholder="Select date">
-		</div>
-		    <div *ngIf="datePost?.touched && datePost.errors" class="alert alert-danger" style="width: 100%;">
-				<div *ngIf="datePost.errors?.required">
-					Date is Required
-				</div>
-			</div>
-		<div class = "form-group">
 			<label>Content</label><br>
-			<textarea name ="content" rows="3" cols="10" class = "form-control" ngModel #contentPost="ngModel" required maxlength="200" placeholder="Content......(limit 200)">></textarea>
+			<textarea name ="content" rows="6" cols="10" class = "form-control" ngModel #contentPost="ngModel" required maxlength="500" minlength="10" placeholder="Content......(at least 10 letters and less than 500)">></textarea>
 		</div>
-		    <div *ngIf="contentPost?.touched && contentPost.errors" class="alert alert-danger" style="width: 100%;">
+		    <div *ngIf="contentPost?.touched && contentPost.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
 			    <div *ngIf="contentPost.errors?.required">
 					Content is Required
 			    </div>
+			    <div *ngIf="contentPost.errors?.minlength">
+					Invalid Content
+				</div>
 		    </div>
 		
 		<button type="submit" name="button" class ="btn btn-success" [disabled]="frm.invalid">Submit</button>
@@ -43,10 +37,10 @@
 <h2 class = "page-header">All News List</h2>
 <br>
 	<table>
-			<tr style="background:#4d4d4d; color:white;">
+			<tr style="background:#006080; color:white;">
 			   <th>Name</th>
 			   <th>Post</th>
-			   <th>Date</th>
+			   <th>Publish On</th>
 			   <th>About</th>
 			   <th>Delete</th>
 			   <th>Update</th>
@@ -55,10 +49,10 @@
 			<tr *ngFor = "let post of posts">
 			   <td>{{post.name}}</td>
 			   <td>{{post.post}}</td>
-			   <td>{{post.date | date}}</td>
-			   <th>{{post.about}}</th>
-			   <th><input type="button" (click) = "deletePost(post._id)" value= "Delete" class ="btn btn-danger" style="border: 1px solid #4d4d4d;"></th>
-			   <th><input type="button" (click) = "updatePost(post._id)" value= "Edit" class ="btn btn-warning" style="border: 1px solid #4d4d4d;"></th>
+			   <td>{{post.created_at | date:"MMMM d, y 'at' h:mm:ss a"}}</td>
+			   <td>{{post.about}}</td>
+			   <td><input type="button" (click) = "deletePost(post._id)" value= "Delete" class ="btn btn-danger" style="border: 1px solid #4d4d4d;"></td>
+			   <td><input type="button" (click) = "updatePost(post._id)" value= "Edit" class ="btn btn-warning" style="border: 1px solid #4d4d4d;"></td>
 			</tr>
 			
 	</table>

@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
      
      this.authService.logout();
      this.flashMessage.show("You're Logged out" , { cssClass: 'alert-success', times:3000});
-     this.router.navigate(['']);
+     this.router.navigate(['/home']);
      return false;
 
   }

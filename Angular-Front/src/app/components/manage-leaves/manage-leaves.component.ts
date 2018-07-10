@@ -79,7 +79,7 @@ export class ManageLeavesComponent implements OnInit {
 	              }
 	            }
             })
-            this.flashMessage.show("Not Accepted " , { cssClass: 'alert-success', times:3000});
+            this.flashMessage.show("Not Accepted " , { cssClass: 'alert-danger', times:3000});
             this.router.navigate(['/manageLeaves']);
         }else {
             this.flashMessage.show("Something Went Wrong" , { cssClass: 'alert-danger', times:3000});

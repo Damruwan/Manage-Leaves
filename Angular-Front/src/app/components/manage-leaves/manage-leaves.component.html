@@ -1,11 +1,12 @@
 <div class = "container">
-<h2 class = "page-header">All Requester Leaves</h2>
+<h2 class = "page-header">All Requested Leaves</h2>
 <br><br>	
 	<table>
-			<tr style="background:#4d4d4d; color:white;">
+			<tr style="background:#006080; color:white;">
 			   <th>Name</th>
 			   <th>Post</th>
-			   <th>Date</th>
+			   <th>Requested On</th>
+			   <th>Leave Dates</th>
 			   <th>Reason</th>
 			   <th>Describe</th>
 			   <th>View</th>
@@ -16,6 +17,7 @@
 			<tr *ngFor = "let request of requests">
 			   <td>{{request.name}}</td>
 			   <td>{{request.post}}</td>
+			   <td>{{request.created_at | date:"MMMM d, y 'at' h:mm:ss a"}}</td>
 			   <td>{{request.date.split(',')[0] | date}} - {{request.date.split(',')[1] | date}}</td>
 			   <td>{{request.reason}}</td>
 			   <td>{{request.describe}}</td>

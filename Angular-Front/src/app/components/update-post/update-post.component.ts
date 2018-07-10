@@ -17,7 +17,6 @@ export class UpdatePostComponent implements OnInit {
   post:String;
   email:String;
   about:String;
-  date:String;
   content:String;
   
   constructor(
@@ -39,7 +38,6 @@ export class UpdatePostComponent implements OnInit {
           this.post = post.post,
           this.email = post.email,
 		  this.about = post.about,
-		  this.date = post.date,
 		  this.content = post.content
      });
 
@@ -51,7 +49,6 @@ export class UpdatePostComponent implements OnInit {
        post:this.post,
        email:this.email,
        about:this.about,
-       date:this.date,
        content:this.content
     };
 

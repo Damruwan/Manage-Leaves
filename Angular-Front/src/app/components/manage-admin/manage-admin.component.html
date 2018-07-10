@@ -1,13 +1,13 @@
 <div class = "container">
-  <div class="jumbotron" style="width: 50%; background-color:#808080; border: 1px solid white;
+  <div class="jumbotron" style="width: 50%; background-color:#d9d9d9; border: 1px solid gray;
     border-radius: 10px;">	
-	<h2 class = "page-header" style="background-color:#4d4d4d; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Register Users</h2>
+	<h2 class = "page-header" style="background-color:#006080; color:white;height: 50px; border: 1px solid white; border-radius: 10px;" align="center">Register Users</h2>
 	<form #frm="ngForm" (ngSubmit) = "registerData(frm)">
 		<div class = "form-group">
 			<label>Name</label>
 			<input type="text" name ="full_name" class = "form-control" ngModel #nameUser="ngModel" required pattern="[a-zA-Z][a-zA-Z]+[ ]+[a-zA-Z][a-zA-Z]+" placeholder="FirstName  LastName">
 		</div>
-		    <div *ngIf="nameUser?.touched && nameUser.errors" class="alert alert-danger" style="width: 100%;">
+		    <div *ngIf="nameUser?.touched && nameUser.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
 				<div *ngIf="nameUser.errors?.required">
 					Name is Required
 				</div>
@@ -19,7 +19,7 @@
 			<label>Phone No.</label>
 			<input type="text" name ="phone" class = "form-control" ngModel #phoneUser="ngModel" required maxlength="10" minlength="10" pattern="[0][0-9]*" placeholder="0xxxxxxxxx">
 		</div>
-			<div *ngIf="phoneUser?.touched && phoneUser.errors" class="alert alert-danger" style="width: 100%;">
+			<div *ngIf="phoneUser?.touched && phoneUser.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
 				<div *ngIf="phoneUser.errors?.required">
 					Phone Number is Required
 				</div>
@@ -31,7 +31,7 @@
 			<label>Email</label>
 			<input type="text" name ="email" class = "form-control" ngModel #emailUser="ngModel" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{3})+$" placeholder="example@gmail.com">
 		</div>
-			<div *ngIf="emailUser?.touched && emailUser.errors" class="alert alert-danger" style="width: 100%;">
+			<div *ngIf="emailUser?.touched && emailUser.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
 				<div *ngIf="emailUser.errors?.required">
 					Email is Required
 				</div>
@@ -43,7 +43,7 @@
 			<label>Password</label>
 			<input type="password" name ="password" class = "form-control" ngModel #passwordUser="ngModel" required maxlength="35" minlength="8" placeholder="At least 8 characters">
 		</div>
-			<div *ngIf="passwordUser?.touched && passwordUser.errors" class="alert alert-danger" style="width: 100%;">
+			<div *ngIf="passwordUser?.touched && passwordUser.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
 				<div *ngIf="passwordUser.errors?.required">
 					Password is Required
 				</div>
@@ -55,7 +55,7 @@
 			<label>Level</label>
 			<input type="text" name="state" class="form-control" ngModel #levelUser="ngModel" required pattern="[0 || 1 || 2]" placeholder="Head:0  Admin:1  Staff:2">
 		</div>
-		    <div *ngIf="levelUser?.touched && levelUser.errors" class="alert alert-danger" style="width: 100%;">
+		    <div *ngIf="levelUser?.touched && levelUser.errors" class="alert alert-danger" style="width: 100%; border: 1px solid red;">
 				<div *ngIf="levelUser.errors?.required">
 					Level is Required
 				</div>
@@ -71,7 +71,7 @@
 <hr>
 <div class = "container">
 	<table>
-			<tr style="background:#4d4d4d; color:white;">
+			<tr style="background:#006080; color:white;">
 			   <th>Name</th>
 			   <th>Post</th>
 			   <th>Contact</th>

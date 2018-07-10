@@ -1,19 +1,23 @@
 <div class = "container">
-<h2>Leaves History</h2>
+<h2 class = "page-header">Leaves History</h2>
 <br><br>	
 	<table>
-			<tr style="background:#4d4d4d; color:white;">
-			   <th>Date</th>
+			<tr style="background:#006080; color:white;">
+			   <th>Requested On</th>
+			   <th>Leave Dates</th>
 			   <th>Reason</th>
 			   <th>Describe</th>
 			   <th>State</th>
+			   <th>Response On</th>
 			</tr>
 			  
 			<tr *ngFor = "let hry of history">
+			   <td>{{hry.req_on | date:"MMMM d, y 'at' h:mm:ss a"}}</td>
 			   <td>{{hry.date.split(',')[0] | date}} - {{hry.date.split(',')[1] | date}}</td>
 			   <td>{{hry.reason}}</td>
 			   <td>{{hry.describe}}</td>
-			   <th style="color:red;">{{hry.state}}</th>
+			   <td style="color:red;">{{hry.state}}</td>
+			   <td>{{hry.state}} on {{hry.created_at | date:"MMMM d, y 'at' h:mm:ss a"}}</td>
 			</tr>
 			
 	</table>
